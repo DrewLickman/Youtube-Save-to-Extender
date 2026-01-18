@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Save to Menu Extender</title>
+    <style>
+        body {
+            width: 300px;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            margin: 0;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            margin: 0 0 20px 0;
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+        .control-group {
+            margin-bottom: 24px;
+        }
+        .control-group:last-child {
+            margin-bottom: 0;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #555;
+        }
+        .slider-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        input[type="range"] {
+            flex: 1;
+            height: 6px;
+            border-radius: 3px;
+            background: #e0e0e0;
+            outline: none;
+            -webkit-appearance: none;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #1976d2;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        input[type="range"]::-webkit-slider-thumb:hover {
+            background: #1565c0;
+        }
+        input[type="range"]::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #1976d2;
+            cursor: pointer;
+            border: none;
+            transition: background 0.2s;
+        }
+        input[type="range"]::-moz-range-thumb:hover {
+            background: #1565c0;
+        }
+        .value-display {
+            min-width: 70px;
+            padding: 6px 12px;
+            background: #f0f0f0;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #1976d2;
+            text-align: center;
+        }
+        .description {
+            font-size: 12px;
+            color: #888;
+            margin-top: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Menu Height Settings</h1>
+        
+        <div class="control-group">
+            <label for="menuHeight">Menu Height (vh)</label>
+            <div class="slider-container">
+                <input type="range" id="menuHeight" min="30" max="100" value="60" step="1">
+                <span class="value-display" id="menuHeightValue">60vh</span>
+            </div>
+            <div class="description">Controls the maximum height of the playlist menu</div>
+        </div>
+        
+        <div class="control-group">
+            <label for="offset">Offset (px)</label>
+            <div class="slider-container">
+                <input type="range" id="offset" min="200" max="500" value="200" step="10">
+                <span class="value-display" id="offsetValue">200px</span>
+            </div>
+            <div class="description">Offset subtracted from menu height for the playlist list (minimum 200px to prevent cutting off the "New playlist" button)</div>
+        </div>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>

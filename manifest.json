@@ -4,8 +4,12 @@
   "version": "1.0.0",
   "description": "Extends the YouTube 'Save to...' playlist menu height to show more playlists without scrolling",
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "storage"
   ],
+  "action": {
+    "default_popup": "popup.html"
+  },
   "content_scripts": [
     {
       "matches": ["*://*.youtube.com/*"],
