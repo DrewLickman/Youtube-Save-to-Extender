@@ -1,0 +1,7 @@
+yt-sheet-view-model.ytSheetViewModelHost {
+    max-height: var(--menu-max-height) !important;
+}
+
+yt-list-view-model.ytListViewModelHost {
+    max-height: calc(var(--menu-max-height) - var(--list-max-height-offset)) !important;
+}
